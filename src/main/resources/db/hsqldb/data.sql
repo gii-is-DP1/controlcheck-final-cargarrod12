@@ -62,3 +62,19 @@ INSERT INTO visits(id,pet_id,visit_date,description) VALUES (2, 8, '2013-01-02',
 INSERT INTO visits(id,pet_id,visit_date,description) VALUES (3, 8, '2013-01-03', 'neutered');
 INSERT INTO visits(id,pet_id,visit_date,description) VALUES (4, 7, '2013-01-04', 'spayed');
 
+
+INSERT into care(id, name, description) values (1, 'Hair brushing', 'We will brush the hair of your pet.');
+INSERT into care(id, name, description) values (2, 'Chemical flea removal', 'We will apply strong chemical products in the hair of your pet to remove any kind of flea or insect present.');
+
+insert into incompatible(care_id, care2_id) values (1,2);
+insert into incompatible(care_id, care2_id) values (2,1);
+
+
+
+insert into compatible(care_id, pet_type_id) values (1, 1);
+insert into compatible(care_id, pet_type_id) values (1, 2);
+insert into compatible(care_id, pet_type_id) values (2, 1);
+insert into compatible(care_id, pet_type_id) values (2, 2);
+
+INSERT into care_provision(id, visit_id, duration, care_id) values (1,1,0.5,2);
+INSERT into care_provision(id, visit_id, duration, care_id) values (2,2,0.25,1);
